@@ -11,8 +11,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
-        <PackageReference Include="BepInEx.Core" Version="5.*" />
+        <PackageReference Include="BepInEx.Analyzers" Version="1.0.8" PrivateAssets="all" />
+        <PackageReference Include="BepInEx.Core" Version="5.4.21" />
         <PackageReference Include="BepInEx.PluginInfoProps" Version="1.*" />
     </ItemGroup>
 
@@ -86,7 +86,8 @@
       </Reference>
     </ItemGroup>
 
-    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-      <Exec Command="cd D:\Lethal_Modding\NetcodePatcher-2.1.0&#xD;&#xA;NetcodePatcher.dll $(TargetDir) deps/" />
-    </Target>
+    <ItemGroup>
+      <Folder Include="Assemblies\" />
+    </ItemGroup>
+
 </Project>

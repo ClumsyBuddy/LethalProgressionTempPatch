@@ -18,7 +18,7 @@ namespace LethalProgression
     internal class LethalProgress : BaseUnityPlugin
     {
         private const string modGUID = "Stoneman.LethalProgression";
-        private const string modName = "Lethal Progression";
+        private const string modName = "Lethal Progression Temp Patch";
         private const string modVersion = "1.0.1";
         private const string modAuthor = "Stoneman";
 
