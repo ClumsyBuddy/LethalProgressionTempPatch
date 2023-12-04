@@ -39,13 +39,10 @@ namespace LethalProgression.Skills
             this.skills.Add("HP Regen", new Skill("Health Regen", "Your body heals itself faster, allowing you to recover from injuries quicker. Only regenerate up to 100 HP.", "HPR", "Health Regeneration", UpgradeType.Health, 1, 20, 0.05f));
             this.skills.Add("Stamina", new Skill("Extra Stamina", "Work on your stamina, sprint just that much longer!", "STM", "Stamina", UpgradeType.Stamina, 1, 99999, 2f, LethalProgression.Skills.Stamina.StaminaUpdate));
             this.skills.Add("Battery Life", new Skill("Battery Life", "You brought better batteries. Replace your batteries AT THE SHIP'S CHARGER to see an effect.", "BAT", "Battery Life", UpgradeType.Battery, 1, 99999, 5f));
-            if (this.ReservedItemCoreDetected)
-            {
-                this.skills.Add("Hand Slot", new Skill("Hand Slot", "This is disabled while ReservedItem mod is active", "HND", "Hand Slots", UpgradeType.HandSlot, 1, 30, 10f, (int one, int two) => { }));
-            }
-            else
+            if (!this.ReservedItemCoreDetected)
             {
                 this.skills.Add("Hand Slot", new Skill("Hand Slot", "The company finally gives you a better belt! Fit more stuff! (Reach 100% for one more slot! 20 per slot.)", "HND", "Hand Slots", UpgradeType.HandSlot, 1, 30, 10f, LethalProgression.Skills.HandSlots.HandSlotsUpdate));
+
             }
             this.skills.Add("Scrap Value", new Skill("Team Scrap Value", "The company favors you, giving you better deals when bartering.", "VAL", "Team Loot Value", UpgradeType.Value, 1, 99999, 1f, LethalProgression.XPHandler.xpInstance.TeamLootValueUpdate, true));
         }
