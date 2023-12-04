@@ -8,12 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BepInEx.Logging;
+using BepInEx.Bootstrap;
 using System.Reflection;
 using System.IO;
 using UnityEngine.SceneManagement;
 
+
 namespace LethalProgression
 {
+
     [BepInPlugin("Stoneman.LethalProgression", "Lethal Progression", "1.0.1")]
     internal class LethalProgress : BaseUnityPlugin
     {
@@ -21,6 +24,8 @@ namespace LethalProgression
         private const string modName = "Lethal Progression Temp Patch";
         private const string modVersion = "1.0.1";
         private const string modAuthor = "Stoneman";
+
+        public bool ReservedSlotDetected = false;
 
         // Make a public AssetBundle
         public static AssetBundle skillBundle;
@@ -68,6 +73,8 @@ namespace LethalProgression
             configXPMin = Config.Bind("General", "XP Minimum", 40, "Minimum XP to level up.");
 
             configXPMax = Config.Bind("General", "XP Maximum", 750, "Maximum XP to level up.");
+
+
         }
     }
 }
